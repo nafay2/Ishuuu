@@ -82,7 +82,7 @@ export function CatCorner() {
   return (
     <div className="flex justify-center gap-14">
       <CatBuddy
-        variant="grey"
+        variant="tortie"
         name="Hades"
         text={shown.who === 'hades' ? easterEggs.hades[shown.i] : null}
         onTap={() => tap('hades', easterEggs.hades)}

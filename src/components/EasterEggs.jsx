@@ -98,6 +98,47 @@ export function CatCorner() {
   )
 }
 
+// Percy peeks out on his own, says his line for a few seconds, and can be tapped to say it again.
+export function PercyPeek({ message }) {
+  const [show, setShow] = useState(false)
+  const timer = useRef(null)
+  const seen = useRef(false)
+
+  const reveal = () => {
+    setShow(true)
+    clearTimeout(timer.current)
+    timer.current = setTimeout(() => setShow(false), 5500)
+  }
+
+  return (
+    <motion.div
+      onViewportEnter={() => {
+        if (seen.current) return
+        seen.current = true
+        setTimeout(reveal, 700)
+      }}
+      viewport={{ once: true, amount: 0.8 }}
+      className="mt-4 pt-28 flex justify-center"
+    >
+      <div className="relative flex flex-col items-center">
+        <Bubble center text={show ? message : null} />
+        <motion.button
+          type="button"
+          onClick={reveal}
+          whileTap={{ scale: 0.88, rotate: -6 }}
+          animate={{ y: [0, -5, 0] }}
+          transition={{ y: { duration: 4, repeat: Infinity, ease: 'easeInOut' } }}
+          aria-label="Percy"
+          className="drop-shadow-md"
+        >
+          <CatSVG size={72} variant="patch" />
+        </motion.button>
+        <span className="mt-1 font-display italic text-sm text-forest-600">Percy</span>
+      </div>
+    </motion.div>
+  )
+}
+
 export function PersistentCat() {
   const [msgIndex, setMsgIndex] = useState(null)
   const timer = useRef(null)

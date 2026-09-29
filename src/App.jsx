@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import FloatingPetals from './components/FloatingPetals'
 import IntroQuestion from './components/IntroQuestion'
+import PasswordGate from './components/PasswordGate'
 import Celebration from './components/Celebration'
 import Welcome from './components/Welcome'
 import Timeline from './components/Timeline'
@@ -34,7 +35,14 @@ const PAGES = [
 ]
 
 export default function App() {
-  const [stage, setStage] = useState('intro') // intro | celebrating | main
+  const [stage, setStage] = useState(() => {
+    // stay unlocked for this browser tab, so a refresh doesn't ask again
+    try {
+      return sessionStorage.getItem('unlocked') === '1' ? 'intro' : 'locked'
+    } catch (e) {
+      return 'locked'
+    }
+  }) // locked | intro | celebrating | main
   const [pageIndex, setPageIndex] = useState(0)
 
   const isFinal = pageIndex === PAGES.length - 1
@@ -84,6 +92,21 @@ export default function App() {
       {stage === 'main' && <ProgressDots total={PAGES.length - 1} current={isFinal ? 0 : pageIndex + 1} />}
 
       <AnimatePresence mode="wait">
+        {stage === 'locked' && (
+          <motion.div key="locked" className="min-h-screen" exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.4 }}>
+            <PasswordGate
+              onUnlock={() => {
+                try {
+                  sessionStorage.setItem('unlocked', '1')
+                } catch (e) {
+                  /* storage blocked — that's fine */
+                }
+                setStage('intro')
+              }}
+            />
+          </motion.div>
+        )}
+
         {stage === 'intro' && (
           <motion.div
             key="intro"

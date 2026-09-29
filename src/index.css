@@ -3,8 +3,27 @@
 @tailwind utilities;
 
 html, body, #root {
-  height: 100%;
+  min-height: 100%;
 }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* phones: 100vh is taller than the visible screen (browser bars) — use dynamic height */
+.min-h-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+button { touch-action: manipulation; }
+
+h1, h2, h3 {
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+p { overflow-wrap: anywhere; }
 
 body {
   margin: 0;

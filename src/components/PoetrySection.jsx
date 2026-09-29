@@ -4,7 +4,7 @@ import PageShell from './PageShell'
 
 export default function PoetrySection({ onNext }) {
   return (
-    <div className="relative w-full min-h-full bg-gradient-to-b from-forest-800 via-forest-700 to-forest-900 overflow-hidden">
+    <div className="relative w-full min-h-screen bg-gradient-to-b from-forest-800 via-forest-700 to-forest-900 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-40">
         <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-icy-300 blur-3xl opacity-20" />
         <div className="absolute bottom-20 right-10 w-56 h-56 rounded-full bg-peony-400 blur-3xl opacity-20" />

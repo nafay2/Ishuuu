@@ -26,7 +26,7 @@ export default function NoticeCards({ onNext }) {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.45, delay: (i % 6) * 0.06 }}
               whileTap={{ scale: 0.97 }}
-              className="relative h-32 md:h-36 rounded-2xl glass p-3 flex flex-col items-center justify-center overflow-hidden shadow-sm"
+              className="relative h-40 sm:h-36 rounded-2xl glass p-3 flex flex-col items-center justify-center overflow-hidden shadow-sm"
               style={{ perspective: 800 }}
             >
               <motion.div
@@ -46,7 +46,7 @@ export default function NoticeCards({ onNext }) {
                   className="absolute inset-0 flex items-center justify-center px-2"
                   style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                 >
-                  <p className="font-body text-[11px] md:text-xs text-forest-600 leading-snug">{card.text}</p>
+                  <p className="font-body text-xs md:text-sm text-forest-600 leading-snug">{card.text}</p>
                 </div>
               </motion.div>
             </motion.button>

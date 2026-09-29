@@ -12,7 +12,7 @@ function Bubble({ text }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -6, scale: 0.9 }}
           transition={{ duration: 0.25 }}
-          className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 whitespace-nowrap glass px-3 py-1.5 rounded-full text-xs font-body text-forest-700 shadow-sm"
+          className="absolute bottom-full mb-2 left-0 max-w-[70vw] w-max glass px-3 py-1.5 rounded-full text-xs font-body text-forest-700 shadow-sm"
         >
           {text}
         </motion.div>
@@ -32,7 +32,7 @@ export function PersistentCat() {
   }
 
   return (
-    <div className="fixed bottom-20 left-4 z-40">
+    <div className="fixed bottom-3 left-3 z-40 safe-bottom">
       <div className="relative">
         <Bubble text={msgIndex !== null ? easterEggs.cat[msgIndex] : null} />
         <motion.button
@@ -62,7 +62,7 @@ export function HiddenButton() {
   }
 
   return (
-    <div className="fixed top-4 left-4 z-40">
+    <div className="fixed top-3 left-3 z-40 safe-top">
       <div className="relative">
         <Bubble text={step === 1 ? easterEggs.dontClick[0] : step === 2 ? easterEggs.dontClick[1] : null} />
         <button

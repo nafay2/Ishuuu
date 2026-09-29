@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { bucketList } from '../data/content'
 import PageShell from './PageShell'
+import { PercyPeek } from './EasterEggs'
+import { easterEggs } from '../data/content'
 
 export default function BucketList({ onNext }) {
   const [saved, setSaved] = useState({})
@@ -47,6 +49,8 @@ export default function BucketList({ onNext }) {
           )
         })}
       </div>
+
+      <PercyPeek message={easterEggs.percyPeek} />
     </PageShell>
   )
 }

@@ -83,7 +83,7 @@ export const noticeCards = [
   { emoji: '🧊', title: 'Your icy blue', text: 'Of course I had to put it here.' },
   { emoji: '🌲', title: 'Your dreamy greens', text: 'Because apparently even your favorite colors have a personality.' },
   { emoji: '🦋', title: 'Your empathy', text: 'You care more deeply than you probably realize.' },
-  { emoji: '🐈', title: 'Your cats', text: 'Obviously cats had to make an appearance.' },
+  { emoji: '🐈', title: 'Hades & Percy', text: 'Hades, your grey cat, and Percy, your little black-and-white kitten. Obviously they had to make an appearance.' },
   { emoji: '🌻', title: 'Butter yellow', text: 'A little warmth for your little universe.' },
   { emoji: '🫶', title: 'The way you think', text: 'You notice things. You think deeply. Sometimes probably way too deeply.' },
   { emoji: '🤍', title: 'Your sensitivity', text: "It's not something that makes you weak." },
@@ -105,9 +105,9 @@ export const questions = [
     prompt: "Who's the prettier one?",
     type: 'choice',
     options: [
-      { label: 'Me 😌', reaction: "Bold answer. I respect it — but we both know that's a lie. 😚" },
-      { label: 'You obviously 🙄', reaction: 'Correct. Noted, for the record.' },
-      { label: 'Hmm let me think...', reaction: "There's nothing to think about, honeyyy." },
+      { label: 'Me 😌', reaction: 'Correct. Finally, some honesty. 😚' },
+      { label: 'You obviously 🙄', reaction: "Sweet of you, but no. It's you, honeyyy. It was always you. 😚" },
+      { label: 'Hmm let me think...', reaction: "There's nothing to think about, honeyyy. It's you." },
     ],
   },
   {
@@ -128,7 +128,7 @@ export const questions = [
     options: [
       { label: 'Beach + sunset 🌊', reaction: 'Noted. Adding it to the list.' },
       { label: 'Cozy room + movie', reaction: "Low effort, high comfort. I'm in." },
-      { label: 'Cats + peace + no humans 😭', reaction: "This one feels very on-brand for you." },
+      { label: 'Cats + peace + no humans 😭', reaction: "This one feels very on-brand for you. Hades and Percy included, obviously." },
       { label: 'Somewhere completely random', reaction: "Chaotic. I like it." },
     ],
   },
@@ -156,7 +156,7 @@ export const questions = [
 export const bucketList = [
   { emoji: '🌊', text: 'Watch a sunset at the beach.' },
   { emoji: '🌸', text: 'Get you an unnecessarily large bouquet of baby pink peonies.' },
-  { emoji: '🐈', text: 'Spend an unreasonable amount of time around cats.' },
+  { emoji: '🐈', text: 'Spend an unreasonable amount of time around cats — Hades and Percy included.' },
   { emoji: '🍿', text: 'Watch movies together.' },
   { emoji: '🌧️', text: 'Have a rainy-day conversation.' },
   { emoji: '🌲', text: 'Go somewhere surrounded by forests.' },
@@ -176,7 +176,7 @@ export const loveThings = [
   'I love your sensitivity.',
   'I love your quietness.',
   'I love that you have an entire universe inside your head.',
-  'I love your love for animals.',
+  'I love your love for animals — the way you care about Hades and Percy.',
   'I love your obsession with baby pink peonies.',
   'I love your little moods.',
   'I love the way you are simply... you.',
@@ -192,7 +192,7 @@ export const letter = {
     "Since then we've had ups and downs — moments that felt ridiculously easy, and moments that were genuinely hard. I'm not going to pretend otherwise.",
     "But through all of it, you became incredibly important to me. You inspire me to become better. You make me want to notice the little things. You make me want to actually experience life and share the happiness in it with someone — with you.",
     "You're genuinely the best thing that has happened to me.",
-    "And I don't love some imaginary perfect version of you. I love you as you are — your quietness, your sensitivity, your moods, your deep thoughts, your empathy, your weird little preferences, your love for cats, your obsession with baby pink peonies. All of it.",
+    "And I don't love some imaginary perfect version of you. I love you as you are — your quietness, your sensitivity, your moods, your deep thoughts, your empathy, your weird little preferences, your love for cats (Hades and Percy especially), your obsession with baby pink peonies. All of it.",
   ],
   signoff: 'Thank you for being you, my love. 😚💗',
 }
@@ -236,6 +236,6 @@ export const finalScreen = {
 // ── Easter eggs ───────────────────────────────────────────────
 export const easterEggs = {
   peony: ['Okay you REALLY like peonies.', 'Noted. 🌸'],
-  cat: ['Meow.', 'She approved the website.', 'Finally someone important showed up.'],
+  cat: ['Meow.', 'Hades approved the website.', 'Percy says hi.', 'Finally someone important showed up.'],
   dontClick: ["I literally told you not to.", "You're cute."],
 }

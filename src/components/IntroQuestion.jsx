@@ -9,6 +9,8 @@ export default function IntroQuestion({ onYes }) {
   const [peonyClicks, setPeonyClicks] = useState(0)
   const [peonyMsg, setPeonyMsg] = useState(null)
   const containerRef = useRef(null)
+  const yesRef = useRef(null)
+  const headingRef = useRef(null)
 
   const onPeonyClick = () => {
     const next = peonyClicks + 1
@@ -20,27 +22,51 @@ export default function IntroQuestion({ onYes }) {
     }
   }
 
+  // Every "No" makes the question more dramatic: Really? → Really really? → ...
   const message =
     noCount === 0
       ? introQuestion.question
+      : `${Array.from({ length: noCount }, (_, i) => (i === 0 ? 'Really' : 'really')).join(' ')}? 🥺`
+
+  // the old playful lines still appear, as a little comment underneath
+  const comment =
+    noCount === 0
+      ? null
       : introQuestion.noMessages[Math.min(noCount - 1, introQuestion.noMessages.length - 1)]
 
   const yesScale = Math.min(1 + noCount * 0.06, 1.5)
-  const noScale = Math.max(1 - noCount * 0.05, 0.55)
+  const noScale = Math.max(1 - noCount * 0.04, 0.7)
+  const headingSize =
+    noCount > 9 ? 'text-xl md:text-3xl' : noCount > 4 ? 'text-2xl md:text-4xl' : 'text-3xl md:text-5xl'
 
-  const dodge = () => {
+  const dodge = (countIt = true) => {
     const container = containerRef.current
     if (!container) return
     const rect = container.getBoundingClientRect()
     const btnW = 130 * noScale
     const btnH = 56 * noScale
     const padding = 16
-    const maxX = Math.max(rect.width - btnW - padding, padding)
-    const maxY = Math.max(rect.height - btnH - padding, padding)
-    const x = padding + Math.random() * maxX
-    const y = padding + Math.random() * maxY
+    const maxX = Math.max(rect.width - btnW - padding * 2, 0)
+    const maxY = Math.max(rect.height - btnH - padding * 2, 0)
+
+    const rel = (el) => {
+      if (!el) return null
+      const r = el.getBoundingClientRect()
+      return { l: r.left - rect.left, t: r.top - rect.top, r: r.right - rect.left, b: r.bottom - rect.top }
+    }
+    const avoid = [rel(yesRef.current), rel(headingRef.current)].filter(Boolean)
+    const hits = (x, y) =>
+      avoid.some((a) => x < a.r + 8 && x + btnW > a.l - 8 && y < a.b + 8 && y + btnH > a.t - 8)
+
+    let x = padding
+    let y = padding
+    for (let tries = 0; tries < 30; tries++) {
+      x = padding + Math.random() * maxX
+      y = padding + Math.random() * maxY
+      if (!hits(x, y)) break
+    }
     setNoPos({ x, y })
-    setNoCount((c) => c + 1)
+    if (countIt) setNoCount((c) => c + 1)
   }
 
   return (
@@ -89,19 +115,23 @@ export default function IntroQuestion({ onYes }) {
 
       <AnimatePresence mode="wait">
         <motion.h1
+          ref={headingRef}
           key={message}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.4 }}
-          className="font-display text-3xl md:text-5xl text-forest-800 mb-10 max-w-md text-shadow-soft"
+          className={`font-display ${headingSize} text-forest-800 mb-3 max-w-md text-shadow-soft`}
         >
           {message}
         </motion.h1>
       </AnimatePresence>
 
+      <p className="font-body text-sm italic text-forest-600/80 min-h-[1.5rem] mb-7 max-w-xs">{comment}</p>
+
       <div className="w-full max-w-sm h-24 flex items-center justify-center">
         <motion.button
+          ref={yesRef}
           animate={{ scale: yesScale }}
           transition={{ type: 'spring', stiffness: 260, damping: 18 }}
           whileTap={{ scale: yesScale * 0.94 }}
@@ -112,8 +142,11 @@ export default function IntroQuestion({ onYes }) {
         </motion.button>
 
         <motion.button
-          onClick={dodge}
-          onMouseEnter={noCount > 0 ? dodge : undefined}
+          onClick={() => dodge(true)}
+          onPointerEnter={(e) => {
+            // mouse only: hovering makes it slip away (no counting); touch taps are counted once via onClick
+            if (e.pointerType === 'mouse' && noCount > 0) dodge(false)
+          }}
           animate={
             noPos
               ? { left: noPos.x, top: noPos.y, scale: noScale }

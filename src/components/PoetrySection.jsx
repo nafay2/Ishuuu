@@ -46,7 +46,7 @@ export default function PoetrySection({ onNext }) {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="mt-8 flex justify-center"
         >
-          <TapPop messages={easterEggs.popups.poetryDot}>
+          <TapPop below messages={easterEggs.popups.poetryDot}>
             <span className="block w-4 h-4 rounded-full bg-peony-300 shadow-glow animate-pulseGlow" />
           </TapPop>
         </motion.div>

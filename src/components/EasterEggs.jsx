@@ -16,7 +16,7 @@ function Bubble({ text, below = false, center = false }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: below ? 6 : -6, scale: 0.9 }}
             transition={{ duration: 0.25 }}
-            className="shrink-0 w-max max-w-[210px] text-center glass !bg-white/95 px-3.5 py-2 rounded-2xl text-xs font-body text-forest-700 shadow-md"
+            className="popup shrink-0 w-max max-w-[210px] text-center px-3.5 py-2.5 rounded-2xl text-[13px] leading-snug font-body"
           >
             {text}
           </motion.div>

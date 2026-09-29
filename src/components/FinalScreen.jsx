@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import PeonySVG from './PeonySVG'
-import { finalScreen } from '../data/content'
+import { finalScreen, easterEggs } from '../data/content'
+import { TapPop } from './EasterEggs'
 
 export default function FinalScreen() {
   const [stage, setStage] = useState('ask') // ask | yes | maybe
@@ -15,7 +16,9 @@ export default function FinalScreen() {
         className="mb-8"
       >
         <motion.div animate={{ y: [0, -18, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}>
-          <PeonySVG size={150} className="drop-shadow-[0_0_60px_rgba(255,179,203,0.6)]" />
+          <TapPop messages={easterEggs.popups.finalPeony}>
+            <PeonySVG size={150} className="drop-shadow-[0_0_60px_rgba(255,179,203,0.6)]" />
+          </TapPop>
         </motion.div>
       </motion.div>
 

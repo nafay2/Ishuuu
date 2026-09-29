@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { noticeHeading, noticeCards } from '../data/content'
 import PageShell from './PageShell'
+import { CatCorner } from './EasterEggs'
 
 export default function NoticeCards({ onNext }) {
   const [flipped, setFlipped] = useState({})
@@ -52,6 +53,11 @@ export default function NoticeCards({ onNext }) {
             </motion.button>
           )
         })}
+      </div>
+
+      <div className="mt-12">
+        <p className="font-body text-xs text-forest-500/70 mb-4">say hi 🐾</p>
+        <CatCorner />
       </div>
     </PageShell>
   )

@@ -32,7 +32,7 @@ export default function IntroQuestion({ onYes }) {
     const container = containerRef.current
     if (!container) return
     const rect = container.getBoundingClientRect()
-    const btnW = 140 * noScale
+    const btnW = 130 * noScale
     const btnH = 56 * noScale
     const padding = 16
     const maxX = Math.max(rect.width - btnW - padding, padding)
@@ -46,7 +46,7 @@ export default function IntroQuestion({ onYes }) {
   return (
     <div
       ref={containerRef}
-      className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center px-5 sm:px-6 py-16 text-center overflow-hidden"
     >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -100,7 +100,7 @@ export default function IntroQuestion({ onYes }) {
         </motion.h1>
       </AnimatePresence>
 
-      <div className="relative w-full max-w-sm h-24 flex items-center justify-center">
+      <div className="w-full max-w-sm h-24 flex items-center justify-center">
         <motion.button
           animate={{ scale: yesScale }}
           transition={{ type: 'spring', stiffness: 260, damping: 18 }}

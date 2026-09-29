@@ -7,7 +7,7 @@ export default function Welcome({ onNext }) {
   const { triggerFromEvent, portal } = useHeartBurst()
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center px-5 sm:px-6 py-16 text-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}

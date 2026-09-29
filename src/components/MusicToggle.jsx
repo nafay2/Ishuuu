@@ -76,7 +76,7 @@ export default function MusicToggle() {
   return (
     <button
       onClick={toggle}
-      className="fixed top-4 right-4 z-40 flex items-center gap-1.5 px-3 py-2 rounded-full glass text-xs font-body text-forest-600 shadow-sm"
+      className="fixed top-3 right-3 z-40 safe-top flex items-center gap-1.5 px-3 py-2 rounded-full glass text-xs font-body text-forest-600 shadow-sm"
       aria-pressed={on}
       aria-label="toggle our little soundtrack"
     >

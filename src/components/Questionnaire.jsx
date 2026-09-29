@@ -9,7 +9,7 @@ function ChoiceQuestion({ q, onAnswered }) {
   return (
     <div className="mb-8">
       <p className="font-display text-xl md:text-2xl text-forest-800 mb-5">{q.prompt}</p>
-      <div className="grid gap-2.5 max-w-sm mx-auto">
+      <div className="grid gap-3 w-full max-w-sm mx-auto">
         {q.options.map((opt, i) => (
           <motion.button
             key={i}
@@ -18,7 +18,7 @@ function ChoiceQuestion({ q, onAnswered }) {
               setPicked(i)
               onAnswered()
             }}
-            className={`px-5 py-3 rounded-2xl font-body text-sm md:text-base transition-colors border ${
+            className={`px-4 py-3.5 rounded-2xl font-body text-[15px] md:text-base transition-colors border ${
               picked === i
                 ? 'bg-peony-100 border-peony-400 text-peony-700'
                 : 'glass border-peony-100 text-forest-700 hover:border-peony-300'

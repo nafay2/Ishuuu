@@ -7,7 +7,7 @@ export default function FinalScreen() {
   const [stage, setStage] = useState('ask') // ask | yes | maybe
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center overflow-hidden bg-gradient-to-b from-forest-900 via-forest-700 to-icy-200">
+    <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-5 sm:px-6 py-16 text-center overflow-hidden bg-gradient-to-b from-forest-900 via-forest-700 to-icy-200">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -15,7 +15,7 @@ export default function FinalScreen() {
         className="mb-8"
       >
         <motion.div animate={{ y: [0, -18, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}>
-          <PeonySVG size={170} className="drop-shadow-[0_0_60px_rgba(255,179,203,0.6)]" />
+          <PeonySVG size={150} className="drop-shadow-[0_0_60px_rgba(255,179,203,0.6)]" />
         </motion.div>
       </motion.div>
 
@@ -32,7 +32,7 @@ export default function FinalScreen() {
             <h1 className="font-display text-3xl md:text-5xl text-cream mb-10 max-w-md text-shadow-soft">
               {finalScreen.ask}
             </h1>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-3 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

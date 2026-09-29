@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import PeonySVG from './PeonySVG'
 import { welcome } from '../data/content'
 import { useHeartBurst } from './FloatingHearts'
+import { TapPop } from './EasterEggs'
+import { easterEggs } from '../data/content'
 
 export default function Welcome({ onNext }) {
   const { triggerFromEvent, portal } = useHeartBurst()
@@ -13,7 +15,9 @@ export default function Welcome({ onNext }) {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <PeonySVG size={90} />
+        <TapPop messages={easterEggs.popups.welcomePeony}>
+          <PeonySVG size={90} />
+        </TapPop>
       </motion.div>
 
       <motion.p

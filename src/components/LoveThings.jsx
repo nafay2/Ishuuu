@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { loveThings, loveThingsClosing } from '../data/content'
 import PageShell from './PageShell'
+import { TapPop } from './EasterEggs'
+import { easterEggs } from '../data/content'
 
 export default function LoveThings({ onNext }) {
   return (
@@ -32,7 +34,7 @@ export default function LoveThings({ onNext }) {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="font-display italic text-xl md:text-2xl text-peony-600 mt-12 max-w-md mx-auto"
       >
-        {loveThingsClosing}
+        <TapPop messages={easterEggs.popups.loveClosing}>{loveThingsClosing}</TapPop>
       </motion.p>
     </PageShell>
   )

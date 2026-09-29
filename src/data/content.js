@@ -25,11 +25,11 @@ export const startDate = 'June 4, 2026'
 // ── Page 1: the intro question ──────────────────────────────
 export const introQuestion = {
   prompt: 'One tiny question before you enter...',
-  question: 'Am I your love? 🥺',
+  question: 'Am I your love? 😗',
   yes: 'YES 😚💗',
   no: 'NO 🙃',
   noMessages: [
-    'No? 🥺',
+    'No? 😗',
     'Are you sure? 👀',
     'Princess... think carefully 😭',
     'That button seems suspicious...',
@@ -83,7 +83,7 @@ export const noticeCards = [
   { emoji: '🧊', title: 'Your icy blue', text: 'Of course I had to put it here.' },
   { emoji: '🌲', title: 'Your dreamy greens', text: 'Because apparently even your favorite colors have a personality.' },
   { emoji: '🦋', title: 'Your empathy', text: 'You care more deeply than you probably realize.' },
-  { emoji: '🐈', title: 'Hades & Percy', text: 'Hades, your grey cat, and Percy, your little black-and-white kitten. Obviously they had to make an appearance.' },
+  { emoji: '🐈', title: 'Hades & Percy', text: 'Hades, your independent cat, and Percy, your clingy baby cat. Obviously they had to make an appearance.' },
   { emoji: '🌻', title: 'Butter yellow', text: 'A little warmth for your little universe.' },
   { emoji: '🫶', title: 'The way you think', text: 'You notice things. You think deeply. Sometimes probably way too deeply.' },
   { emoji: '🤍', title: 'Your sensitivity', text: "It's not something that makes you weak." },
@@ -237,5 +237,24 @@ export const finalScreen = {
 export const easterEggs = {
   peony: ['Okay you REALLY like peonies.', 'Noted. 🌸'],
   cat: ['Meow.', 'Hades approved the website.', 'Percy says hi.', 'Finally someone important showed up.'],
+  hades: [
+    "I don't need anyone. ...okay maybe you. 😼",
+    'Hades is independent. Do not disturb. (Pet me anyway.)',
+    'Fine. One head scratch. Only one.',
+  ],
+  percy: [
+    'Percy is climbing onto your lap. He is staying. 🥺',
+    'Clingy baby alert. 🐾',
+    'Percy would like to be held. Right now.',
+  ],
+  // little tap-me popups sprinkled around the site
+  popups: {
+    welcomePeony: ['Hi princess. 🌸', "Yes, it's all for you.", 'Tap me again, I dare you.'],
+    timelineDate: ['I remember this day perfectly. 👀', 'Do you? 😌'],
+    loveClosing: ['Still cannot believe it. 😚', 'Lucky me, honestly.'],
+    letterSignoff: ['I meant every word.', 'Read it again if you want. 🤍'],
+    poetryDot: ["That's my heartbeat. 💗", 'Yours, mostly.'],
+    finalPeony: ["Okay stop, I'm blushing. 🌸", 'Say yes already 😭'],
+  },
   dontClick: ["I literally told you not to.", "You're cute."],
 }

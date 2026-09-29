@@ -26,7 +26,7 @@ export default function IntroQuestion({ onYes }) {
   const message =
     noCount === 0
       ? introQuestion.question
-      : `${Array.from({ length: noCount }, (_, i) => (i === 0 ? 'Really' : 'really')).join(' ')}? 🥺`
+      : `${Array.from({ length: noCount }, (_, i) => (i === 0 ? 'Really' : 'really')).join(' ')}? 😗`
 
   // the old playful lines still appear, as a little comment underneath
   const comment =

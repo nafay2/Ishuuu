@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { timelineIntro, timelineMilestones } from '../data/content'
 import PageShell from './PageShell'
+import { TapPop } from './EasterEggs'
+import { easterEggs } from '../data/content'
 
 export default function Timeline({ onNext }) {
   const [openIndex, setOpenIndex] = useState(null)
@@ -11,7 +13,9 @@ export default function Timeline({ onNext }) {
       <p className="uppercase tracking-[0.2em] text-xs text-forest-500/70 font-body mb-2">
         {timelineIntro.title}
       </p>
-      <h2 className="font-display text-3xl md:text-5xl text-forest-800 mb-3">{timelineIntro.date}</h2>
+      <h2 className="font-display text-3xl md:text-5xl text-forest-800 mb-3">
+        <TapPop below messages={easterEggs.popups.timelineDate}>{timelineIntro.date}</TapPop>
+      </h2>
       <p className="font-body text-forest-600/90 max-w-md mx-auto mb-10">{timelineIntro.text}</p>
 
       <div className="relative max-w-xl mx-auto text-left">

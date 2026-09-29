@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { poetryHeading, poetryLines, poetryClosing } from '../data/content'
 import PageShell from './PageShell'
+import { TapPop } from './EasterEggs'
+import { easterEggs } from '../data/content'
 
 export default function PoetrySection({ onNext }) {
   return (
@@ -42,8 +44,12 @@ export default function PoetrySection({ onNext }) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="mt-8 mx-auto w-3 h-3 rounded-full bg-peony-300 shadow-glow animate-pulseGlow"
-        />
+          className="mt-8 flex justify-center"
+        >
+          <TapPop messages={easterEggs.popups.poetryDot}>
+            <span className="block w-4 h-4 rounded-full bg-peony-300 shadow-glow animate-pulseGlow" />
+          </TapPop>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}

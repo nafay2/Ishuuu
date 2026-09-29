@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { letter } from '../data/content'
 import PageShell from './PageShell'
+import { TapPop } from './EasterEggs'
+import { easterEggs } from '../data/content'
 
 export default function LoveLetter({ onNext }) {
   return (
@@ -36,7 +38,7 @@ export default function LoveLetter({ onNext }) {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="font-display text-lg md:text-xl text-peony-600 mt-8 text-center"
         >
-          {letter.signoff}
+          <TapPop messages={easterEggs.popups.letterSignoff}>{letter.signoff}</TapPop>
         </motion.p>
       </motion.div>
     </PageShell>

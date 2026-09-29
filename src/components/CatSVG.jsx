@@ -1,8 +1,8 @@
 const VARIANTS = {
   // the little golden cat that follows her around the site
   gold: { body: '#f3bc3a', ear: '#f3bc3a', inner: '#ffd3e0', patch: null, whisker: '#7a5a10' },
-  // Hades: the independent tortoiseshell tabby (brown, black and orange)
-  tortie: { body: '#5a4530', ear: '#3b2d20', ear2: '#c98a3a', inner: '#e9b9a5', patch: null, whisker: '#3b2d20', tortie: true },
+  // Hades: the independent brown-and-greyish tabby
+  tortie: { body: '#5b4d41', ear: '#3a3029', ear2: '#7d6f62', inner: '#e3bfb4', patch: null, whisker: '#3a3029', tortie: true },
   // Percy: the clingy baby cat, black and white
   patch: { body: '#ffffff', ear: '#1d1d22', inner: '#ffd3e0', patch: '#1d1d22', whisker: '#55555c' },
 }
@@ -16,11 +16,11 @@ export default function CatSVG({ className = '', size = 90, variant = 'gold' }) 
       <path d="M75 40 L85 15 L62 32 Z" fill={v.ear2 || v.ear} opacity={variant === 'gold' ? 0.9 : 1} />
       {v.tortie && (
         <>
-          {/* orange patches */}
-          <path d="M52 32 C68 34 82 46 80 62 C72 60 62 56 56 46 Z" fill="#c98a3a" />
-          <path d="M20 60 C22 48 30 44 36 46 C34 54 30 62 20 60 Z" fill="#d99a48" />
+          {/* soft grey-brown patches */}
+          <path d="M52 32 C68 34 82 46 80 62 C72 60 62 56 56 46 Z" fill="#8a7a6b" />
+          <path d="M20 60 C22 48 30 44 36 46 C34 54 30 62 20 60 Z" fill="#7b6b5d" />
           {/* lighter tan muzzle */}
-          <ellipse cx="50" cy="68" rx="13" ry="9" fill="#a98a63" />
+          <ellipse cx="50" cy="68" rx="13" ry="9" fill="#a89886" />
           {/* tabby forehead stripes */}
           <path d="M50 34 L50 44 M42 36 L44 44 M58 36 L56 44" stroke="#2a2018" strokeWidth="2.4" strokeLinecap="round" />
           {/* cheek stripes */}

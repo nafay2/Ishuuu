@@ -5,7 +5,7 @@ export default function ProgressDots({ total, current }) {
       {Array.from({ length: total }).map((_, i) => (
         <span
           key={i}
-          className={`h-1.5 rounded-full transition-all duration-500 ${
+          className={`h-1.5 rounded-full transition-all duration-500 shadow-sm ${
             i === current - 1
               ? 'w-5 bg-peony-500'
               : i < current - 1

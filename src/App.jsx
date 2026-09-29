@@ -40,10 +40,37 @@ export default function App() {
   const isFinal = pageIndex === PAGES.length - 1
   const PageComponent = PAGES[pageIndex]
 
+  const dark = PageComponent === PoetrySection
+
   const goNext = () => setPageIndex((i) => Math.min(i + 1, PAGES.length - 1))
 
   return (
-    <div className="grain relative min-h-screen w-full bg-cream overflow-x-hidden">
+    <div className={`grain relative min-h-screen w-full bg-cream overflow-x-hidden ${dark ? 'on-dark' : ''}`}>
+      {/* soft ambient colour behind everything */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 z-0">
+        <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-peony-200/50 blur-3xl" />
+        <div className="absolute top-1/3 -right-28 w-72 h-72 rounded-full bg-icy-200/50 blur-3xl" />
+        <div className="absolute -bottom-24 left-1/4 w-72 h-72 rounded-full bg-butter-200/40 blur-3xl" />
+      </div>
+
+      {/* fades so scrolling content never collides with the fixed buttons */}
+      {stage === 'main' && !isFinal && (
+        <>
+          <div
+            aria-hidden
+            className={`pointer-events-none fixed top-0 inset-x-0 h-20 z-30 bg-gradient-to-b to-transparent ${
+              dark ? 'from-forest-800 via-forest-800/70' : 'from-cream via-cream/75'
+            }`}
+          />
+          <div
+            aria-hidden
+            className={`pointer-events-none fixed bottom-0 inset-x-0 h-28 z-30 bg-gradient-to-t to-transparent ${
+              dark ? 'from-forest-900 via-forest-900/70' : 'from-cream via-cream/75'
+            }`}
+          />
+        </>
+      )}
+
       <FloatingPetals count={stage === 'main' ? 10 : 16} variant={isFinal ? 'heart' : 'petal'} />
 
       {stage === 'main' && !isFinal && (

@@ -15,7 +15,7 @@ export default function Timeline({ onNext }) {
       <p className="font-body text-forest-600/90 max-w-md mx-auto mb-10">{timelineIntro.text}</p>
 
       <div className="relative max-w-xl mx-auto text-left">
-        <div className="absolute left-[10px] top-2 bottom-2 w-px bg-gradient-to-b from-peony-300 via-icy-300 to-forest-300" />
+        <div className="absolute left-[10px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-peony-300 via-icy-300 to-forest-300" />
         <div className="space-y-4">
           {timelineMilestones.map((m, i) => {
             const open = openIndex === i
@@ -29,7 +29,7 @@ export default function Timeline({ onNext }) {
                 onClick={() => setOpenIndex(open ? null : i)}
                 className="relative pl-8 w-full text-left group"
               >
-                <span className="absolute left-0 top-1.5 w-[21px] h-[21px] rounded-full bg-white border-2 border-peony-400 flex items-center justify-center">
+                <span className="absolute left-0 top-1.5 w-[21px] h-[21px] rounded-full bg-white border-2 border-peony-400 flex items-center justify-center shadow-glow">
                   <span className="w-2 h-2 rounded-full bg-peony-500" />
                 </span>
                 <div className="glass rounded-2xl px-4 py-3 shadow-sm group-hover:shadow-glow transition-shadow">

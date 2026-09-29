@@ -3,16 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import CatSVG from './CatSVG'
 import { easterEggs } from '../data/content'
 
-function Bubble({ text }) {
+function Bubble({ text, below = false }) {
   return (
     <AnimatePresence>
       {text && (
         <motion.div
-          initial={{ opacity: 0, y: 6, scale: 0.9 }}
+          initial={{ opacity: 0, y: below ? -6 : 6, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -6, scale: 0.9 }}
+          exit={{ opacity: 0, y: below ? 6 : -6, scale: 0.9 }}
           transition={{ duration: 0.25 }}
-          className="absolute bottom-full mb-2 left-0 max-w-[70vw] w-max glass px-3 py-1.5 rounded-full text-xs font-body text-forest-700 shadow-sm"
+          className={`absolute ${below ? 'top-full mt-2' : 'bottom-full mb-2'} left-0 max-w-[70vw] w-max glass px-3.5 py-2 rounded-2xl text-xs font-body text-forest-700 shadow-md`}
         >
           {text}
         </motion.div>
@@ -64,10 +64,10 @@ export function HiddenButton() {
   return (
     <div className="fixed top-3 left-3 z-40 safe-top">
       <div className="relative">
-        <Bubble text={step === 1 ? easterEggs.dontClick[0] : step === 2 ? easterEggs.dontClick[1] : null} />
+        <Bubble below text={step === 1 ? easterEggs.dontClick[0] : step === 2 ? easterEggs.dontClick[1] : null} />
         <button
           onClick={onClick}
-          className="text-[10px] font-body text-forest-400/40 hover:text-forest-500/60 transition-colors px-2 py-1"
+          className="glass rounded-full text-[11px] font-body text-forest-500/80 px-3 py-1.5 shadow-sm"
         >
           don't click
         </button>

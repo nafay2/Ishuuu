@@ -116,7 +116,7 @@ export const questions = [
     type: 'choice',
     options: [
       { label: 'Hug you', reaction: "That's the correct response. 🫶" },
-      { label: 'Cry', reaction: 'Happy tears only, please. 🥺' },
+      { label: 'Cry', reaction: 'Happy tears only, please. 🫶' },
       { label: 'Steal the flowers', reaction: "They were always yours anyway. 🌸" },
       { label: "Pretend I'm not impressed", reaction: "I'd see right through that, pretty girl." },
     ],
@@ -218,7 +218,7 @@ export const poetryClosing = 'Bas itna sa vaada hai, meri jaan. 🤍'
 // ── Page 10: final screen ────────────────────────────────────
 export const finalScreen = {
   question: 'One last question...',
-  ask: 'Will you stay a little while longer? 🥺',
+  ask: 'Will you stay a little while longer? 🤍',
   yes: 'Obviously 😚💗',
   maybe: 'Maybe...',
   afterYes: {
@@ -243,7 +243,7 @@ export const easterEggs = {
     'Fine. One head scratch. Only one.',
   ],
   percy: [
-    'Percy is climbing onto your lap. He is staying. 🥺',
+    'Percy is climbing onto your lap. He is staying. 🐾',
     'Clingy baby alert. 🐾',
     'Percy would like to be held. Right now.',
   ],

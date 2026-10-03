@@ -75,7 +75,7 @@ function SliderQuestion({ q, onAnswered }) {
           animate={{ opacity: 1 }}
           className="mt-4 font-body text-sm italic text-forest-600"
         >
-          {val > 70 ? "That's what I thought. 😌" : val > 30 ? 'Fair enough, honeyyy.' : "We'll work on it. 🥺"}
+          {val > 70 ? "That's what I thought. 😌" : val > 30 ? 'Fair enough, honeyyy.' : "We'll work on it. 😅"}
         </motion.p>
       )}
     </div>

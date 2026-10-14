@@ -247,10 +247,10 @@ export const easterEggs = {
     'Clingy baby alert. 🐾',
     'Percy would like to be held. Right now.',
   ],
-  // Hades gives the password hint on the lock screen
+  // Hades gives the PIN hint on the lock screen
   passwordHint: [
-    'Hint: it is in the song you once sent me on WhatsApp. 🦋',
-    'Listen to it again, princess. 🎧',
+    'Hint: two birthdays, squished into one code. 🎂',
+    'Just the days, princess. His first, then yours. 🦋',
   ],
   // Percy pops up by himself in the middle of the site
   percyPeek: 'My mama is also sometimes a panda and only Nafay knows it 😋',
